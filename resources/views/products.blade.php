@@ -17,11 +17,11 @@
         </div>
         <div class="mb-3">
         <label class="form-label">Company</label>
-        <select class="form-select">
+        <select class="form-select" name="company_id">
             <option value="">Select a company</option>
             @foreach($companies as $company)
-                <option value="{{ $company->id }}">{{ $company->name }}</option>
-            @endforeach
+                <option value="{{$company->id }}">{{$company->name}}</option>
+            @endforeach 
         </select>
         </div>
         <div class="mb-3">

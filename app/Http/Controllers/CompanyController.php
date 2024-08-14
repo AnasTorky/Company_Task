@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
+use App\Models\Product;
 
 class CompanyController extends Controller
 {
@@ -20,7 +21,7 @@ class CompanyController extends Controller
             'city' => $request->city,
             'size' => $request->size
            ]);
-        return $request;
+        return redirect()->route('companiesindex');
     }
     public function update_company(Request $request){
         $updated_Company->update([
@@ -35,6 +36,6 @@ class CompanyController extends Controller
         $companies = Company::all();
         $updated_Company = Company::find($id);
         $updated_Company->delete();
-        return view("companies",compact('companies'));
+        return redirect()->route('companiesindex');
     }
 }

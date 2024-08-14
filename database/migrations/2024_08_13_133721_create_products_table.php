@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId("company_id")->constrained('companies')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId("company_name")->constrained('companies')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->text("company_name")->nullable();
             $table->text('name')->nullable();
             $table->text('details')->nullable();
             $table->timestamps();
